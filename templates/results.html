@@ -13,7 +13,7 @@
         </tr>
         {% for result in results %}
         <tr>
-            <td> {{ result['changeset'] }}</th>
+            <td> <a href={{ "https://osmcha.org/changesets/{}".format(result['changeset']) }}>{{ result['changeset'] }}</a></th>
             <td> {{ result['ways'] }}</th>
             <td> {{ result['ukm'] }}</th>
         </tr>

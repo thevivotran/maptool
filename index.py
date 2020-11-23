@@ -95,7 +95,7 @@ def geofence():
 
 @app.route('/geofence/reversed', methods=['POST'])
 def reversed():
-    input_value = request.form.get('input_value')
+    input_value = request.form['latlong']
     def reverse_geofence(input):
         ls = input.split(' ')
         rs = []

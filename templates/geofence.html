@@ -1,13 +1,13 @@
+{% extends 'base.html' %}
+
 {% block header %}
-    <h1>Reverse Geofence Tool</h1>
+    <h1>{% block title %}Reverse Geofence Tool{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
     <form action="/geofence/reversed" method="POST">
-        <div class="form-group">
-        <textarea type="text" placeholder="Polygon Latlong" name='input_value'></textarea>
-        <br></br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <label for="latlong">Import Polygon Latlong</label>
+        <input name="latlong" id="latlong" required>
+        <input type="submit" value="Submit">
     </form>
 {% endblock %}
