@@ -107,5 +107,3 @@ def reversed():
         rs.reverse()
         return ', '.join(rs)
     return render_template('reversed.html', result=reverse_geofence(input_value))
-
-app.run(debug=True)
