@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Results{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Changeset ID</th>
+            <th>Ways</th>
+            <th>UKM</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td> {{ result['changeset'] }}</th>
+            <td> {{ result['ways'] }}</th>
+            <td> {{ result['ukm'] }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

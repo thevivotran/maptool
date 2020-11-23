@@ -1,0 +1,19 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Vivo</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<nav>
+  <h1><a href="/">Vivo's Map Tools</h1></a>
+  <ul>
+        <li><a href="/ukmcal">UKM Calculate</a></li>
+        <li><a href="/geofence">Reverse Geofence</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>
+
