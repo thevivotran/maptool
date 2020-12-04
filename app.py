@@ -1,7 +1,9 @@
-from flask import (Flask, render_template, request)
+from flask import (Flask, render_template, request, send_file)
 import requests
 import bs4
 import math
+import geojson
+import json
 
 app = Flask(__name__)
 
@@ -107,3 +109,17 @@ def reversed():
         rs.reverse()
         return ', '.join(rs)
     return render_template('reversed.html', result=reverse_geofence(input_value))
+
+@app.route('/getpoi')
+def getpoi():
+    return render_template('getpoi.html')
+
+@app.route('/getpoi/result', methods=['POST'])
+def getpoiResult():
+    data = json.loads(request.form['json'])
+    rs = []
+    for line in data:
+        rs.append((line['lng'], line['lat']))
+    with open('POI.geojson','wt') as f:
+        f.write(json.dumps(geojson.MultiPoint(rs)))    
+    return send_file('POI.geojson', as_attachment=True)

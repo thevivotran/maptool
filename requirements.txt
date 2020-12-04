@@ -1,4 +1,6 @@
 flask
 bs4
 requests
+geojson
+json
 gunicorn
